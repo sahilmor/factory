@@ -119,7 +119,7 @@ export default function ProcessPage() {
       <section className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="relative">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-border -translate-y-1/2 z-0" />
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 z-0" />
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
               {processSteps.map((step, index) => (
                 <ScrollReveal key={step.id} delay={index * 0.15} threshold={0.2}>
@@ -156,8 +156,8 @@ export default function ProcessPage() {
             </p>
           </ScrollReveal>
 
-          <Tabs defaultValue="design" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
+          <Tabs defaultValue="design" className="hidden md:block w-full">
+            <TabsList className="md:grid w-full grid-cols-2 md:grid-cols-5 mb-8">
               {processSteps.map((step) => (
                 <TabsTrigger key={step.id} value={step.id} className="relative group">
                   <span>{step.title}</span>
@@ -215,6 +215,45 @@ export default function ProcessPage() {
               </TabsContent>
             ))}
           </Tabs>
+
+          <div className="block md:hidden space-y-8">
+            {processSteps.map((step) => (
+              <ScrollReveal key={step.id}>
+                <ThreeDCard>
+                  <Card>
+                    <div className="grid">
+                      {/* <div className="relative h-[250px] overflow-hidden rounded-t-lg">
+                        <Image src={step.image || "/placeholder.svg"} alt={step.title} fill className="object-cover" />
+                      </div> */}
+                      <CardHeader>
+                        {/* <div className="mb-4">{step.icon}</div> */}
+                        <CardTitle className="text-2xl">{step.title}</CardTitle>
+                        <CardDescription className="text-base">{step.description}</CardDescription>
+                        <CardContent className="px-0 pt-6">
+                          <h4 className="font-semibold mb-3">Key Components:</h4>
+                          <ul className="space-y-2">
+                            {step.details.map((detail, index) => (
+                              <motion.li
+                                key={index}
+                                className="flex items-start gap-2"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.3, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                              >
+                                <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                <span>{detail}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </CardHeader>
+                    </div>
+                  </Card>
+                </ThreeDCard>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </ParallaxSection>
 

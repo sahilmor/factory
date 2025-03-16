@@ -322,7 +322,7 @@ export default function CareersPage() {
           </ScrollReveal>
 
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 mb-8">
+            <TabsList className="hidden md:grid w-full grid-cols-2 md:grid-cols-6 mb-8">
               <TabsTrigger value="all" className="relative group">
                 <span>All</span>
                 <motion.div

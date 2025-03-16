@@ -163,7 +163,7 @@ export default function GalleryPage() {
       <ParallaxSection className="w-full py-12 md:py-24" baseVelocity={0.05}>
         <div className="container px-4 md:px-6">
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
+            <TabsList className="hidden md:grid w-full grid-cols-2 md:grid-cols-5 mb-8">
               {categories.map((category) => (
                 <TabsTrigger key={category.id} value={category.id} className="relative group">
                   <span>{category.name}</span>

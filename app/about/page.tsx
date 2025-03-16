@@ -123,7 +123,7 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <ScrollReveal>
               <AnimatedCard hoverEffect="tilt">
-                <Card className="h-full bg-background/50 backdrop-blur-sm">
+                <Card className="md:h-[54vh] bg-background/50 backdrop-blur-sm space-y-4">
                   <CardHeader>
                     <CardTitle className="text-2xl">Our Mission</CardTitle>
                   </CardHeader>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                       To revolutionize manufacturing through innovation, quality craftsmanship, and sustainable
                       practices, delivering products that exceed expectations and drive industry forward.
                     </p>
-                    <ul className="mt-4 space-y-2">
+                    <ul className="mt-4 space-y-4">
                       {[
                         "Excellence in every product",
                         "Customer-centric approach",
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.2}>
               <AnimatedCard hoverEffect="tilt">
-                <Card className="h-full bg-background/50 backdrop-blur-sm">
+                <Card className="md:h-[54vh] bg-background/50 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-2xl">Our Vision</CardTitle>
                   </CardHeader>
@@ -222,7 +222,7 @@ export default function AboutPage() {
                       </AnimatedCard>
                     </div>
                     <motion.div
-                      className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary"
+                      className="absolute left-[49.5%] transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
